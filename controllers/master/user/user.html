@@ -1,0 +1,80 @@
+<div ng-controller="UserController" ng-init="reset()">
+     <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">User</h1>
+    </div>
+    <div class="well">
+        <!--
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+        <li><a href="#profile" data-toggle="tab">Password</a></li>
+    </ul>
+-->
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="home">
+                <form id="tab">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                <label>Username</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="name" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Password</label> 
+                            </td>
+                            <td colspan="3">
+                                <input type="password" ng-Model="password" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Is-Active</label> 
+                            </td>
+                            <td colspan="3">
+                                <input type="checkbox" ng-Model="isActive" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                
+                            </td>
+                            <td colspan="3">
+                                <button type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ng-disabled="!name || !password" ng-click="add(event)">{{addButton}}</button>
+                                <button align="right" type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  ng-click="reset()">RESET</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--                    <div class="gridStyle" ng-grid="gridOptions"></div>-->
+<br>
+                    <table border="1">
+                        <tr>
+                            <th colspan="2" align="center">Actions</th>
+                            <th>Name</th>
+                            <th>isActive</th>
+                        </tr>
+                        <tr ng-repeat="x in myData">
+                            <td><button type="button" ng-click="edit(x.UserID)">EDIT</button></td>
+                            <td><button type="button" ng-click="delete(x)">DELETE</button></td>
+                            <td>{{x.Name | uppercase}}</td>
+                            <td>{{x.IsActive | yesNo}}</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .gridStyle {
+        border: 1px solid rgb(212, 212, 212);
+        width: 400px;
+        height: 120px;
+    }
+
+</style>
+
+<link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css" />

@@ -1,0 +1,115 @@
+<div ng-controller="EmployeeController" ng-init="GetEmployees()">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Employee</h1>
+    </div>
+    <div class="well">
+        <!--
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+        <li><a href="#profile" data-toggle="tab">Password</a></li>
+    </ul>
+-->
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="home">
+                <form id="tab">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                <label>Employee Name</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="name" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Age</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="age" class="input-xlarge" only-numbers>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Email</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="email" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Gender</label>
+                            </td>
+                            <td colspan="3" class="input-xlarge">
+                                <select ng-Model="gender" class="input-xlarge">
+                                    <option ng-option value="">Select Gender</option>
+                                    <option ng-repeat="option in genders" value="{{option.genderId}}">{{option.name}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Salary</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="salary" class="input-xlarge" only-numbers>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Date of Birth</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-model="dob"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+
+                            </td>
+                            <td colspan="3">
+                                <button type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ng-disabled="!name || !age || !email || !gender || !salary" ng-click="add(event)">{{addButton}}</button>
+                                <button align="right" type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ng-click="reset()">RESET</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--                    <div class="gridStyle" ng-grid="gridOptions"></div>-->
+                    <br>
+                    <table border="1">
+                        <tr>
+                            <th colspan="2" align="center">Actions</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Age</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Salary</th>
+                        </tr>
+                        <tr ng-repeat="x in myData">
+                            <td><button type="button" ng-click="edit(x.EmployeeID)">EDIT</button></td>
+                            <td><button type="button" ng-click="delete(x)">DELETE</button></td>
+                            <td>{{x.Name | uppercase}}</td>
+                            <td>{{x.Email}}</td>
+                            <td>{{x.Age}}</td>
+                            <td>{{x.DOB | date: 'yyyy-MM-dd'}}</td>
+                            <td>{{x.Gender}}</td>
+                            <td>{{x.Salary | currency:'₹'}}</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .gridStyle {
+        border: 1px solid rgb(212, 212, 212);
+        width: 400px;
+        height: 120px;
+    }
+
+</style>
+
+<link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css" />

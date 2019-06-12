@@ -1,0 +1,60 @@
+<div ng-controller="RoleController" ng-init="fillData()">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Role</h1>
+    </div>
+    <div class="well">
+        <!--
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+        <li><a href="#profile" data-toggle="tab">Password</a></li>
+    </ul>
+-->
+        <button ng-click="backList()" class="d-none d-sm-inline-block btn btn-sm btn-link shadow-sm">Back To List</button>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active in" id="home">
+                <form id="tab">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                <label>Name</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="name" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <label>Description</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="description" class="input-xlarge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+
+                            </td>
+                            <td colspan="3">
+                                <button type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ng-disabled="!name || !description" ng-click="add(event)">{{addButton}}</button>
+                                <button align="right" type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-default shadow-sm" ng-click="reset()">RESET</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--                    <div class="gridStyle" ng-grid="gridOptions"></div>-->
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .gridStyle {
+        border: 1px solid rgb(212, 212, 212);
+        width: 400px;
+        height: 120px;
+    }
+
+</style>
+
+<link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css" />
