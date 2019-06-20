@@ -24,7 +24,7 @@ myApp.controller('LoginController',
         }
 
         $scope.$watch('username', function () {
-            console.log('username Watcher Run : ' + $scope.username);
+           // console.log('username Watcher Run : ' + $scope.username);
         });
 
         $scope.openPopUp = function () {

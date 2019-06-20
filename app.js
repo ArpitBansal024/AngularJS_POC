@@ -1,4 +1,4 @@
-var myApp = angular.module('AngJSApp', ['ui.router', 'ui.bootstrap']);
+var myApp = angular.module('AngJSApp', ['ui.router', 'ui.bootstrap','ui.grid']);
 
 myApp.factory("flash", function ($rootScope) {
 
@@ -23,7 +23,8 @@ myApp.factory("flash", function ($rootScope) {
 });
 
 myApp.constant("apiPoint", {
-    baseAddress: 'http://localhost:64494/api/'
+    // baseAddress: 'http://localhost:64494/api/'
+    baseAddress: 'http://nodltp52028910/WebAPITest/api/'
 });
 
 myApp.config(

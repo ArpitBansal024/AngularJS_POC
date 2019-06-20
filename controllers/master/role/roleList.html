@@ -1,46 +1,50 @@
 <div ng-controller="RoleListController" ng-init="reset()">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div>
         <h1 class="h3 mb-0 text-gray-800">Role</h1>
     </div>
-    <div class="well">
-        <!--
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
-        <li><a href="#profile" data-toggle="tab">Password</a></li>
-    </ul>
--->
-        <div id="myTabContent" class="tab-content">
-            <div class="tab-pane active in" id="home">
-                <form id="tab">
-                    <!--                    <div class="gridStyle" ng-grid="gridOptions"></div>-->
+    <div>
+        <div>
+            <div>
+                <form>
                     <button ng-click="addRole()" class="d-none d-sm-inline-block btn btn-sm btn-link shadow-sm">Add Role</button>
                     <br>
-                    <table border="1">
+                    <table>
+                        <tr>
+                            <td colspan="3">
+                                <label>Search for Grid : </label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" ng-Model="query[Description]" class="input-xlarge">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="grid" ui-grid="gridOptions"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--<table border="1">
                         <tr>
                             <th colspan="2" align="center">Actions</th>
                             <th>Name</th>
                             <th>Description</th>
                         </tr>
-                        <tr ng-repeat="x in myData">
+                        <tr ng-repeat="x in myData | filter:query[Description]">
                             <td><button type="button" ng-click="edit(x.Role_ID)" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">EDIT</button></td>
                             <td><button type="button" ng-click="delete(x)" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm">DELETE</button></td>
                             <td>{{x.Name | uppercase}}</td>
                             <td>{{x.Description}}</td>
                         </tr>
-                    </table>
-                </form>
-            </div>
-        </div>
-    </div>
+                    </table>-->
 </div>
 
 <style>
-    .gridStyle {
-        border: 1px solid rgb(212, 212, 212);
-        width: 400px;
-        height: 120px;
+    .grid {
+        border: 2px solid rgb(212, 212, 212);
+        color: black;
+        width: 500px;
+        height: 20px !important;
     }
 
 </style>
-
-<link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css" />

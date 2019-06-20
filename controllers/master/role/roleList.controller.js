@@ -14,37 +14,29 @@ myApp.controller('RoleListController',
         $scope.addRole = function () {
             $state.go('Master.Role');
         }
-        //        $scope.add = function (event) {
-        //            let item = {
-        //                Role_ID: $scope.id,
-        //                Name: $scope.name,
-        //                Description: $scope.description
-        //            }
-        //            if ($scope.addButton == 'ADD') {
-        //                roleFactory.addRole(item)
-        //                    .then(function (response) {
-        //                        if (response) {
-        //                            alert('Record ' + $scope.addButton + ' Successfully!');
-        //                            $scope.reset();
-        //                        }
-        //                    });
-        //            } else {
-        //                roleFactory.updateRole(item)
-        //                    .then(function (response) {
-        //                        if (response) {
-        //                            alert('Record ' + $scope.addButton + ' Successfully!');
-        //                            $scope.reset();
-        //                        }
-        //                    });
-        //            }
-        //
-        //        }
+
 
         $scope.reset = function () {
             $scope.id = '';
             $scope.name = '';
             $scope.description = '';
             $scope.addButton = 'ADD';
+            $scope.gridOptions = {
+                enableRowSelection: false,
+                columnDefs: [{
+                        field: "Name"
+                    },
+                    {
+                        field: "Description"
+                    },
+                    {
+                        name: 'actions',
+                        displayName: 'Actions',
+                        cellTemplate: '<button type="button" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm" ng-click="grid.appScope.edit(row.entity.Role_ID)" >Edit</button><button type="button" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm" ng-click="grid.appScope.delete(row.entity)" >Delete</button>'
+                    }
+    ],
+                data: 'myData'
+            };
             $scope.GetRoles();
         }
 

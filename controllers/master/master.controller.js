@@ -35,7 +35,7 @@ myApp.controller('MasterController',
                     templateUrl: '../controllers/login/changePassword.html',
                     size: 'lg',
                     controller: function ($scope, $uibModalInstance) {
-                        console.log('PopUp Page  ');
+                        console.log('PopUp Page');
                         $scope.ok = function () {
                             $uibModalInstance.close();
                         };
