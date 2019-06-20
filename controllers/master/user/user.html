@@ -11,14 +11,14 @@
 -->
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane active in" id="home">
-                <form id="tab">
+                <form>
                     <table>
                         <tr>
                             <td colspan="3">
                                 <label>Username</label>
                             </td>
                             <td colspan="3">
-                                <input type="text" ng-Model="name" class="input-xlarge">
+                                <input type="text" ng-Model="name" class="input-xlarge" required>
                             </td>
                         </tr>
                         <tr>
@@ -26,7 +26,7 @@
                                 <label>Password</label> 
                             </td>
                             <td colspan="3">
-                                <input type="password" ng-Model="password" class="input-xlarge">
+                                <input type="password" ng-Model="password" class="input-xlarge" required>
                             </td>
                         </tr>
                         <tr>
@@ -42,7 +42,7 @@
                                 
                             </td>
                             <td colspan="3">
-                                <button type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ng-disabled="!name || !password" ng-click="add(event)">{{addButton}}</button>
+                                <button type="submit" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ng-disabled="!name || !password" ng-click="add(event)">{{addButton}}</button>
                                 <button align="right" type="button" text="submit" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"  ng-click="reset()">RESET</button>
                             </td>
                         </tr>

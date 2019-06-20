@@ -23,11 +23,10 @@ myApp.factory("flash", function ($rootScope) {
 });
 
 myApp.constant("apiPoint", {
-    baseAddress: 'http://nodltp52028910/WebAPITest/api/'
+    baseAddress: 'http://localhost:64494/api/'
 });
 
 myApp.config(
-
     //    function ($routeProvider) {
     //        $routeProvider.
     //            when('/', {

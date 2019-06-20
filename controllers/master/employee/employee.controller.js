@@ -15,10 +15,14 @@ myApp.controller('EmployeeController',
         $scope.GetEmployees = function () {
             employeeFactory.getEmployeesList()
                 .then(function (response) {
-                    if (response.data.length > 0) {
-                        $scope.myData = response.data;
+                        if (response.data.length > 0) {
+                            $scope.myData = response.data;
+                        }
+                    },
+                    function (err) {
+
                     }
-                });
+                );
         }
 
         $scope.add = function (event) {

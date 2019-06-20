@@ -1,15 +1,15 @@
 myApp.controller('MasterController',
     function (userInformationService, $scope, $location, $state, $rootScope, $uibModal) {
-        $scope.userName = userInformationService.getUserName();
+        $scope.userName = localStorage.getItem('userName');
         // if (localStorage.getItem('userName')) {
-        if ($scope.userName != '') {
+        if ($scope.userName != null) {
             $scope.title = 'Home';
             $scope.userdata = 'Home Page';
             $scope.logout = function () {
                 $state.go('Login');
             }
 
-            $scope.dashboard = function () {
+            $scope.dashboard = function () { 
                 $state.go('Master.DashBoard');
             }
 
@@ -35,7 +35,7 @@ myApp.controller('MasterController',
                     templateUrl: '../controllers/login/changePassword.html',
                     size: 'lg',
                     controller: function ($scope, $uibModalInstance) {
-                        console.log('PopUp Page');
+                        console.log('PopUp Page  ');
                         $scope.ok = function () {
                             $uibModalInstance.close();
                         };
